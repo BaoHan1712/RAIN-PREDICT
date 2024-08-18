@@ -23,5 +23,5 @@ new_data_scaled = loaded_scaler.transform(new_df)
 new_predictions = loaded_svr_model.predict(new_data_scaled)
 binary_predictions = np.where(new_predictions >= 0.5, "Yes", "No")
 
-print("Dự đoán lũ lụt:", binary_predictions)
-print("Dự đoán % :", new_predictions)
+print("Flood forecast:", binary_predictions)
+print(" Predict % :", new_predictions)

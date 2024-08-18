@@ -10,13 +10,13 @@ daily= 'current'
 #     f"https://api.openweathermap.org/data/2.5/weather?q={user_input}&units=imperial&APPID={api_key}&exclude={daily}")
  
 weather_data = requests.get(
-    f"https://api.openweathermap.org/data/3.0/onecall/timemachine?q={user_input}&units=imperial&APPID={api_key}&exclude={daily}")   
+        f"https://api.openweathermap.org/data/2.5/weather?q={user_input}&units=imperial&APPID={api_key}&exclude={daily}")  
     
 
 weather = weather_data.json()['weather'][0]['main']
 rain = round(float(weather_data.json().get('rain', {}).get('1h', 0)), 3)
 
-precipitation = rain* 24
+precipitation = rain * 24
 
 if 70 <= precipitation <= 101 :
     print ("There is a possibility of flooding")
